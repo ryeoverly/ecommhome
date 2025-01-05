@@ -1,0 +1,25 @@
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(id, name, price) {
+    const item = { id, name, price, quantity: 1 };
+
+    // Check if the item already exists in the cart
+    const existingItem = cart.find(item => item.id === id);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+function updateCartCount() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartLink = document.querySelector('nav ul li a');
+    cartLink.textContent = `Cart (${cartCount})`;
+}
+
+// Initialize cart count
+updateCartCount();
