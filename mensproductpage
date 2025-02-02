@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Men's Product - Stylish Jacket</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-details">
+      <div class="product-images">
+        <img src="product1.jpg" alt="Stylish Men's Jacket" id="main-image">
+        <div class="thumbnail-images">
+          <img src="product1-thumbnail1.jpg" alt="Jacket View 1" class="thumbnail" onclick="changeImage('product1.jpg')">
+          <img src="product1-thumbnail2.jpg" alt="Jacket View 2" class="thumbnail" onclick="changeImage('product1-2.jpg')">
+        </div>
+      </div>
+      <div class="product-info">
+        <h1>Stylish Men's Jacket</h1>
+        <p class="product-description">
+          This is a premium quality men's jacket, made with durable fabric and designed for comfort. Perfect for any casual outing or evening event.
+        </p>
+        <span class="price">$99.99</span>
+        <div class="product-sizes">
+          <label for="size">Size:</label>
+          <select name="size" id="size">
+            <option value="s">Small</option>
+            <option value="m">Medium</option>
+            <option value="l">Large</option>
+            <option value="xl">XL</option>
+          </select>
+        </div>
+        <div class="product-color">
+          <label for="color">Color:</label>
+          <select name="color" id="color">
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+          </select>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your eCommerce Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to change the product image when thumbnails are clicked
+    function changeImage(imageName) {
+      document.getElementById('main-image').src = imageName;
+    }
+  </script>
+</body>
+</html>
